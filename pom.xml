@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>ApiTask</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Archetype - ApiTask</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <!-- Rest Assured -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>4.4.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Cucumber -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>6.10.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>6.10.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>5.7.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JSON Path -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-path</artifactId>
+      <version>4.4.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Add Cucumber Reporting dependencies -->
+    <dependency>
+      <groupId>net.masterthought</groupId>
+      <artifactId>cucumber-reporting</artifactId>
+      <version>5.7.0</version>
+    </dependency>
+  </dependencies>
+</project>
