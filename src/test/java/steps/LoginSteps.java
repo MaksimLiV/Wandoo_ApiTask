@@ -26,7 +26,7 @@ public class LoginSteps {
 
         Assert.assertEquals(200, loginResponse.getStatusCode());
 
-        // Извлечение куки и заголовков
+
         cookies = loginResponse.getCookies();
         csrfToken = loginResponse.getHeader("_csrf");
         xsrfToken = loginResponse.getHeader("x-xsrf-token");
@@ -41,19 +41,18 @@ public class LoginSteps {
             Assert.fail("User is not logged in or session information is missing.");
         }
 
-        // Убедитесь, что все необходимые куки и заголовки передаются
         Response balanceResponse = RestAssured.given()
-                .cookies(cookies)  // Использование всех полученных куки
+                .cookies(cookies)
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json")
-                .header("_csrf", csrfToken)  // Добавление CSRF токен// Добавление XSRF токена
+                .header("_csrf", csrfToken)
                 .get(baseUrl + "/rest/public/profile/account-entries");
 
         balanceResponse.then().log().all();
         System.out.println("Fetching account balance. Status Code: " + balanceResponse.getStatusCode());
 
         if (balanceResponse.getStatusCode() == 200) {
-            // Предполагается, что поле называется "accountBalance"
+
             openingBalance = balanceResponse.jsonPath().getFloat("accountBalance");
             System.out.println("Opening Balance: " + openingBalance);
         } else {
